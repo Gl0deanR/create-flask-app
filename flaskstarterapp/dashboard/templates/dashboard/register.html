@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block content %}
+    <main class="text-center form-signin w-100 m-auto">
+        {% include 'flashes.html' %}
+        <form method="post">
+            <img class="mb-4" src="{{ url_for('static', filename='assets/favicon/favicon.svg') }}" alt="" width="72"
+                 height="57">
+            <h1 class="h3 mb-3 fw-normal">Register new account</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id=f_username" name="username" placeholder="Username" required>
+                <label for="f_username">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="f_email_address" name="email_address"
+                       placeholder="name@example.com" required>
+                <label for="f_email_address">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="f_last_name" name="last_name" placeholder="Last name"
+                       required>
+                <label for="f_last_name">Last name</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="f_first_name" name="first_name" placeholder="First name"
+                       required>
+                <label for="f_first_name">First name</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="f_password" name="password" placeholder="Password"
+                       required>
+                <label for="f_password">Password</label>
+            </div>
+
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+
+            <div>
+                <p class="mt-5 mb-3">Already have an account? <a href="{{ url_for('dashboard.login_page') }}">Login
+                    here</a>.</p>
+            </div>
+            <p class="mt-5 mb-3 text-muted">Flask Starter App 2022</p>
+        </form>
+    </main>
+
+
+
+    <link href="{{ url_for('static', filename='css/auth_form.css') }}" rel="stylesheet">
+{% endblock content %}
