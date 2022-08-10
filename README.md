@@ -56,6 +56,7 @@ this will look for changes in the database models and apply them to your databas
 
 ## Todo
 
+- [ ] Create demo web application
 - [ ] Work on code
 - [ ] Add more features
 - [ ] Work on README.md
