@@ -44,6 +44,14 @@ The starter project has 3 pages:
 3. Home
 4. **BONUS** Logout *(not actually a page)*
 
+After every update to the [models.py](https://github.com/Gl0deanR/flask-starter-app/blob/main/flaskstarterapp/models.py) 
+file you need to run in your terminal virtual environment:
+```
+flask db migrate -m "migrate message"
+flask db upgrade
+```
+this will look for changes in the database models and apply them to your database.
+
 ---
 
 ## Todo
