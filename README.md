@@ -28,8 +28,8 @@ python app.py
 ```
 
 This will start the app in debug mode and is ready for you to use. First you should go
-to [localhost:5000/register](localhost:5000/register) to register a new user. After that you will be able to log in
-going to [localhost:5000/login](localhost:5000/login). The home page is protected by the ```@login_required``` decorator
+to [localhost:5000/register](http://localhost:5000/register) to register a new user. After that you will be able to log in
+going to [localhost:5000/login](http://localhost:5000/login). The home page is protected by the ```@login_required``` decorator
 of the Flask-Login package so that only logged in users can see it.
 
 ## Easy to start
