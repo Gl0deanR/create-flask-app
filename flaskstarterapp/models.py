@@ -5,12 +5,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 @login_manager.user_loader
 def load_user(user_id):
-    return Users.query.get(int(user_id))
+    return User.query.get(int(user_id))
 
 
 # Users Model
-class Users(db.Model, UserMixin):
-    __tablename__ = 'users'
+class User(db.Model, UserMixin):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), nullable=False, unique=True)
     last_name = db.Column(db.String(300), nullable=False)
@@ -29,3 +29,9 @@ class Users(db.Model, UserMixin):
 
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def serialize_sql(self):
+        user_dict = {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        user_dict.pop('password_hash')
+        user_dict.pop('email_address')
+        return user_dict

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, flash, request, abort
 from flask_login import login_user, logout_user, current_user, login_required
-from flaskstarterapp.models import Users
+from flaskstarterapp.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from flaskstarterapp import db
 
@@ -29,15 +29,15 @@ def register_page():
             flash("All fields must be filled in!", category='success')
             return redirect(url_for('dashboard.register_page'))
 
-        user = Users.query.filter_by(email_address=request.form.get('email_address')).first()
+        user = User.query.filter_by(email_address=request.form.get('email_address')).first()
         if user is None:
             # Hash the password
             hashed_pw = generate_password_hash(request.form.get('password'), "sha256")
-            user_to_create = Users(username=request.form.get('username'),
-                                   last_name=request.form.get('last_name'),
-                                   first_name=request.form.get('first_name'),
-                                   email_address=request.form.get('email_address'),
-                                   password_hash=hashed_pw)
+            user_to_create = User(username=request.form.get('username'),
+                                  last_name=request.form.get('last_name'),
+                                  first_name=request.form.get('first_name'),
+                                  email_address=request.form.get('email_address'),
+                                  password_hash=hashed_pw)
             db.session.add(user_to_create)
             db.session.commit()
 
@@ -56,7 +56,7 @@ def login_page():
     if current_user.is_authenticated:
         return redirect(url_for('dashboard.home'))
     if request.method == 'POST':
-        attempted_user = Users.query.filter_by(email_address=request.form.get('email_address')).first()
+        attempted_user = User.query.filter_by(email_address=request.form.get('email_address')).first()
         if attempted_user:
             # Checking the hash password
             if check_password_hash(attempted_user.password_hash, request.form.get('password')):
