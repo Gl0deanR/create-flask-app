@@ -10,7 +10,7 @@ It's set up to use [SQLlite3](https://www.sqlite.org) and My SQL (for MySQL you 
 install [pymysql](https://pypi.org/project/PyMySQL/) `pip install PyMySQL`
 or something similar which you prefer).
 
-Flask Starter App uses blueprints which means your project is ready to go big, it's easy to scale. It's great for both
+Create Flask App uses blueprints which means your project is ready to go big, it's easy to scale. It's great for both
 small and large applications.
 
 ---
@@ -42,6 +42,7 @@ The starter project has 3 pages:
 1. Register
 2. Login
 3. Home
+4. API
 4. **BONUS** Logout *(not actually a page)*
 
 After every update to the [models.py](https://github.com/Gl0deanR/flask-starter-app/blob/main/flaskstarterapp/models.py) 
