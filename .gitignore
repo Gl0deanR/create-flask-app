@@ -4,3 +4,4 @@ migrations/
 __pycache__/
 .pytest_cache
 flaskstarterapp/database_name.db
+flaskstarterapp/config.py

@@ -32,8 +32,6 @@ def register_page():
         user = Users.query.filter_by(email_address=request.form.get('email_address')).first()
         if user is None:
             # Hash the password
-            print("HEREEE")
-            print(request.form.get('email_address'))
             hashed_pw = generate_password_hash(request.form.get('password'), "sha256")
             user_to_create = Users(username=request.form.get('username'),
                                    last_name=request.form.get('last_name'),
