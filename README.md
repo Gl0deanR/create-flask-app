@@ -1,4 +1,4 @@
-# Flask Starter App
+# Create Flask App
 
 Simple project to get started with your Flask App.
 
