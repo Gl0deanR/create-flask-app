@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Flask App
+{% endblock title %}
+
+{% set active_page = 'all_users' %}
+
+{% block content %}
+    {% include 'flashes.html' %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Adding a new user</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar" class="align-text-bottom"></span>
+                This week
+            </button>
+        </div>
+    </div>
+
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        <div class="mb-3">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control", style="max-width: 350px") }}
+        </div>
+        <div class="mb-3">
+            {{ form.email_address.label(class="form-label") }}
+            {{ form.email_address(class="form-control", style="max-width: 350px") }}
+        </div>
+        <div class="mb-3">
+            {{ form.last_name.label(class="form-label") }}
+            {{ form.last_name(class="form-control", style="max-width: 350px") }}
+        </div>
+        <div class="mb-3">
+            {{ form.first_name.label(class="form-label") }}
+            {{ form.first_name(class="form-control", style="max-width: 350px") }}
+        </div>
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", style="max-width: 350px") }}
+        </div>
+
+        {{ form.submit(class="btn btn-outline-primary") }}
+
+    </form>
+
+{% endblock content %}

@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from datetime import date
-from flaskstarterapp.config import db_user, db_password, db_name, secret_key
+from createflaskapp.config import db_user, db_password, db_name, secret_key
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -44,9 +44,9 @@ login_manager.login_message_category = "info"
 login_manager.login_message = "You must be logged in to view this page."
 
 # Blueprints Settings
-# from flaskstarterapp.models import Users
-from flaskstarterapp.dashboard.dashboard import dashboard
-from flaskstarterapp.api_v1.api_v1 import api_v1
+# from createflaskapp.models import Users
+from createflaskapp.dashboard.dashboard import dashboard
+from createflaskapp.api_v1.api_v1 import api_v1
 
 app.register_blueprint(dashboard)
 app.register_blueprint(api_v1)

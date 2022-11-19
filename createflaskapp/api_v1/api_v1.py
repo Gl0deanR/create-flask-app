@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
-from flaskstarterapp.models import User
-from flaskstarterapp import limiter, db
-from flaskstarterapp.config import token_globinary
+from createflaskapp.models import User
+from createflaskapp import limiter, db
+from createflaskapp.config import token_globinary
 
 api_v1 = Blueprint("api_v1", __name__,
                    url_prefix="/api-v1",

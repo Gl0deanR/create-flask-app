@@ -1,5 +1,5 @@
-from flaskstarterapp import app
-from flaskstarterapp.config import is_dev
+from createflaskapp import app
+from createflaskapp.config import is_dev
 
 if __name__ == '__main__':
     # Change debug=True for local development

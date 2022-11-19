@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Flask App
+{% endblock title %}
+
+{% set active_page = 'all_users' %}
+
+{% block content %}
+    {% include 'flashes.html' %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">All users</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar" class="align-text-bottom"></span>
+                This week
+            </button>
+        </div>
+    </div>
+
+    <a href="{{ url_for('dashboard.add_user') }}">
+        <button class="btn btn-primary" type="button">
+            Add new user
+        </button>
+    </a>
+    <br/>
+    <br/>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-sm text-center align-middle">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Actions (edit / delete)</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in all_users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email_address }}</td>
+                    <td>
+                        <a href="{{ url_for('dashboard.edit_user', user_id=user.id) }}">
+                            <button class="btn btn-outline-success btn-sm">
+                                <i class="bi bi-pen"></i>
+                            </button>
+                        </a>
+                        <a href="{{ url_for('dashboard.delete_user', user_id=user.id) }}">
+                            <button class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock content %}
