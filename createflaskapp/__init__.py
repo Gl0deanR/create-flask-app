@@ -13,15 +13,12 @@ app = Flask(__name__)
 # Database settings
 # SQLITE Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database_name.db'
-# OR
-# MySQL Database
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{db_user}:{db_password}@localhost/{db_name}'
 
 # SQL Alchemy Settings
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Secret Key
-app.config['SECRET_KEY'] = secret_key
+app.config['SECRET_KEY'] = secret_key  # Change this to your own secret key/
 
 # Initialize the database
 db = SQLAlchemy(app)
@@ -31,7 +28,7 @@ migrate = Migrate(app, db)
 limiter = Limiter(app, key_func=get_remote_address)
 
 
-# Send information across every blueprint
+# Send information across every blueprint in the app
 @app.context_processor
 def inject_date():
     return {'date': date.today()}

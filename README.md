@@ -4,11 +4,9 @@ Simple project to get started with your Flask App.
 
 At the moment the sample project can register a user, log in a user and logout.
 
-Syling done using [Bootstrap 5.2](https://getbootstrap.com/).
+Styling done using [Bootstrap 5.2](https://getbootstrap.com/).
 
-It's set up to use [SQLlite3](https://www.sqlite.org) and My SQL (for MySQL you should
-install [pymysql](https://pypi.org/project/PyMySQL/) `pip install PyMySQL`
-or something similar which you prefer).
+It's set up to use [SQLite3](https://www.sqlite.org) but can easily be changed to use your preferred database.
 
 Create Flask App uses blueprints which means your project is ready to go big, it's easy to scale. It's great for both
 small and large applications.
@@ -30,11 +28,11 @@ python app.py
 This will start the app in debug mode and is ready for you to use. First you should go
 to [localhost:5000/register](http://localhost:5000/register) to register a new user. After that you will be able to log in
 going to [localhost:5000/login](http://localhost:5000/login). The home page is protected by the ```@login_required``` decorator
-of the Flask-Login package so that only logged in users can see it.
+of the Flask-Login package so that only logged-in users can see it.
 
 ## Easy to start
 
-You only need to clone this repo, install the requests.txt file and run the database commands and you're done. I
+You only need to clone this repo, install the requests.txt file and run the database commands, and you're done. I
 recommend using the latest versions (I will do my best to keep it updated as quickly as I can).
 
 The starter project has 3 pages:
@@ -43,7 +41,7 @@ The starter project has 3 pages:
 2. Login
 3. Home
 4. API
-4. **BONUS** Logout *(not actually a page)*
+5. **BONUS** Logout *(not actually a page)*
 
 After every update to the [models.py](https://github.com/Gl0deanR/flask-starter-app/blob/main/flaskstarterapp/models.py) 
 file you need to run in your terminal virtual environment:
