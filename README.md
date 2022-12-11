@@ -35,13 +35,14 @@ of the Flask-Login package so that only logged-in users can see it.
 You only need to clone this repo, install the requests.txt file and run the database commands, and you're done. I
 recommend using the latest versions (I will do my best to keep it updated as quickly as I can).
 
-The starter project has 3 pages:
+The starter project has:
 
-1. Register
-2. Login
-3. Home
-4. API
-5. **BONUS** Logout *(not actually a page)*
+1. Register Page
+2. Login Page
+3. Home Page
+4. Users Admin Page
+5. API
+6. **BONUS** Logout *(not actually a page)*
 
 After every update to the [models.py](https://github.com/Gl0deanR/flask-starter-app/blob/main/flaskstarterapp/models.py) 
 file you need to run in your terminal virtual environment:
