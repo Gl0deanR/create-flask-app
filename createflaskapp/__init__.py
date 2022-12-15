@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from datetime import date
-from createflaskapp.config import db_user, db_password, db_name, secret_key
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -18,7 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database_name.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Secret Key
-app.config['SECRET_KEY'] = secret_key  # Change this to your own secret key/
+app.config['SECRET_KEY'] = 'secret_key12345678'  # Change this to your own secret key
 
 # Initialize the database
 db = SQLAlchemy(app)
