@@ -51,7 +51,7 @@ def edit_user(user_id):
             if user_to_update.email_address != form.email_address.data:
                 user_to_update.email_address = form.email_address.data
             if form.password.data != '':
-                user_to_update.password_hash = generate_password_hash(form.password.data, "sha256")
+                user_to_update.password_hash = generate_password_hash(form.password.data, "scrypt")
             db.session.commit()
             flash("User updated successfully!", category='success')
             return redirect(url_for('dashboard.edit_user', user_id=user_id))
@@ -101,7 +101,7 @@ def add_user():
                 first_name=form.first_name.data,
                 last_name=form.last_name.data,
                 email_address=form.email_address.data,
-                password_hash=generate_password_hash(form.password.data, "sha256")
+                password_hash=generate_password_hash(form.password.data, "scrypt")
             )
             db.session.add(new_user)
             db.session.commit()
@@ -131,7 +131,7 @@ def register_page():
         user = User.query.filter_by(email_address=request.form.get('email_address')).first()
         if user is None:
             # Hash the password
-            hashed_pw = generate_password_hash(request.form.get('password'), "sha256")
+            hashed_pw = generate_password_hash(request.form.get('password'), "scrypt")
             user_to_create = User(
                 username=request.form.get('username'),
                 last_name=request.form.get('last_name'),
