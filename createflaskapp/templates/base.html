@@ -13,14 +13,14 @@
     </title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <!-- Bootstrap Dashboard CSS -->
     <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
 
-    <!-- Bootstrap Dashboard CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Your Custom Style -->
     <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
@@ -58,13 +58,15 @@
                 </h6>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link {{ 'active' if active_page == 'dashboard' else '' }}" aria-current="page" href="{{ url_for('dashboard.home') }}">
+                        <a class="nav-link {{ 'active' if active_page == 'dashboard' else '' }}" aria-current="page"
+                           href="{{ url_for('dashboard.home') }}">
                             <span data-feather="home" class="align-text-bottom"></span>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ 'active' if active_page == 'all_users' else '' }}" href="{{ url_for('dashboard.users') }}">
+                        <a class="nav-link {{ 'active' if active_page == 'all_users' else '' }}"
+                           href="{{ url_for('dashboard.users') }}">
                             <span data-feather="file" class="align-text-bottom"></span>
                             Users
                         </a>
@@ -147,8 +149,11 @@
 </div>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
 
 <!-- Chart.JS -->
