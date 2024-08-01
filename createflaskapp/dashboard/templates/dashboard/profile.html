@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create Flask App
+{% endblock title %}
+
+{% set active_page = 'my_profile' %}
+
+{% block content %}
+    {% include 'flashes.html' %}
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Editing your profile - {{ user.username }}</h1>
+    </div>
+
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        <div class="mb-3">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control", style="max-width: 350px", value=user.username) }}
+        </div>
+        <div class="mb-3">
+            {{ form.email_address.label(class="form-label") }}
+            {{ form.email_address(class="form-control", style="max-width: 350px", value=user.email_address) }}
+        </div>
+        <div class="mb-3">
+            {{ form.last_name.label(class="form-label") }}
+            {{ form.last_name(class="form-control", style="max-width: 350px", value=user.last_name) }}
+        </div>
+        <div class="mb-3">
+            {{ form.first_name.label(class="form-label") }}
+            {{ form.first_name(class="form-control", style="max-width: 350px", value=user.first_name) }}
+        </div>
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", style="max-width: 350px", value="") }}
+        </div>
+
+        {{ form.submit(class="btn btn-outline-primary") }}
+
+    </form>
+
+{% endblock content %}
