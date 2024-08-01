@@ -5,3 +5,4 @@ __pycache__/
 .pytest_cache
 createflaskapp/database_name.db
 createflaskapp/config.py
+instance/

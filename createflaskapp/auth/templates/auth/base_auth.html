@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <<!-- Bootstrap CSS -->
+    {% include "bootstrap_css.html" %}
+
+    {% include "favicon.html" %}
+</head>
+<body>
+<main class="text-center form-signin w-100 m-auto">
+    {% include 'flashes.html' %}
+    {% block content_auth %}
+    {% endblock content_auth %}
+</main>
+
+<link href="{{ url_for('static', filename='css/auth_form.css') }}" rel="stylesheet">
+<!-- Bootstrap JS -->
+{% include "bootstrap_js.html" %}
+</body>
+</html>

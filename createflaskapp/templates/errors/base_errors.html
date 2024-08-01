@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <!-- Bootstrap CSS -->
+    {% include "bootstrap_css.html" %}
+
+    {% include "favicon.html" %}
+</head>
+<body>
+{% block content_error %}
+{% endblock content_error %}
+
+<!-- Bootstrap JS -->
+{% include "bootstrap_js.html" %}
+
+</body>
+</html>

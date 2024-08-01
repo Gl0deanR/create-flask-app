@@ -1,0 +1,35 @@
+{% extends 'auth/base_auth.html' %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content_auth %}
+
+    <form method="post">
+        <img class="mb-4" src="{{ url_for('static', filename='assets/favicon/globinary-logo-main.png') }}"
+             alt="logo"
+             width="217"
+             height="50">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="f_email_address" name="email_address"
+                   placeholder="name@example.com">
+            <label for="f_email_address">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="f_password" name="password" placeholder="Password">
+            <label for="f_password">Password</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign in</button>
+
+        <div>
+            <p class="mt-5 mb-3">Don't have an account? <a href="{{ url_for('auth.register_page') }}">Sign up
+                here</a>.</p>
+        </div>
+        <p class="mt-5 mb-3 text-muted">Create Flask App {{ date.year }}</p>
+    </form>
+
+{% endblock content_auth %}

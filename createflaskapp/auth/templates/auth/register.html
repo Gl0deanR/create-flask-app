@@ -1,18 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Page not found - 404</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
-<body>
-<main class="text-center form-signin w-100 m-auto">
-    {% include 'flashes.html' %}
+{% extends 'auth/base_auth.html' %}
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block content_auth %}
+
     <form method="post">
-        <img class="mb-4" src="{{ url_for('static', filename='assets/favicon/favicon.svg') }}" alt="" width="72"
-             height="57">
+        <img class="mb-4" src="{{ url_for('static', filename='assets/favicon/globinary-logo-main.png') }}"
+             alt="logo"
+             width="217"
+             height="50">
         <h1 class="h3 mb-3 fw-normal">Register new account</h1>
 
         <div class="form-floating">
@@ -44,17 +42,10 @@
         <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Register</button>
 
         <div>
-            <p class="mt-5 mb-3">Already have an account? <a href="{{ url_for('dashboard.login_page') }}">Login
+            <p class="mt-5 mb-3">Already have an account? <a href="{{ url_for('auth.login_page') }}">Login
                 here</a>.</p>
         </div>
         <p class="mt-5 mb-3 text-muted">Create Flask App {{ date.year }}</p>
     </form>
-</main>
 
-
-<link href="{{ url_for('static', filename='css/auth_form.css') }}" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content_auth %}

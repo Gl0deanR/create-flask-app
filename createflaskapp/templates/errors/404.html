@@ -1,0 +1,12 @@
+{% extends "errors/base_errors.html" %}
+
+{% block title %}
+    Page not found - 404
+{% endblock title %}
+
+{% block content_error %}
+    <h1>Page not found - 404!</h1>
+    <a href="{{ url_for('dashboard.home') }}">
+        <h2>Go to home page.</h2>
+    </a>
+{% endblock content_error %}

@@ -3,8 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from datetime import date
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 
 # Create a Flask Instance
 app = Flask(__name__)
@@ -23,9 +21,6 @@ app.config['SECRET_KEY'] = 'secret_key12345678'  # Change this to your own secre
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# Limit API requests
-limiter = Limiter(app, key_func=get_remote_address)
-
 
 # Send information across every blueprint in the app
 @app.context_processor
@@ -35,7 +30,7 @@ def inject_date():
 
 # Flask Login settings
 login_manager = LoginManager(app)
-login_manager.login_view = 'dashboard.login_page'
+login_manager.login_view = 'auth.login_page'
 login_manager.login_message_category = "info"
 login_manager.login_message = "You must be logged in to view this page."
 
@@ -43,6 +38,8 @@ login_manager.login_message = "You must be logged in to view this page."
 # from createflaskapp.models import Users
 from createflaskapp.dashboard.dashboard import dashboard
 from createflaskapp.api_v1.api_v1 import api_v1
+from createflaskapp.auth.auth import auth
 
 app.register_blueprint(dashboard)
 app.register_blueprint(api_v1)
+app.register_blueprint(auth)
