@@ -4,7 +4,7 @@ Simple project to get started with your Flask App.
 
 At the moment the sample project can register a user, log in a user and logout.
 
-Styling done using [Bootstrap 5.3.1](https://getbootstrap.com/).
+Styling done using [Bootstrap 5.3.3](https://getbootstrap.com/).
 
 It's set up to use [SQLite3](https://www.sqlite.org) but can easily be changed to use your preferred database.
 
