@@ -107,9 +107,48 @@ We welcome contributions! Here's how you can help:
 - Add tests for any new functionality.
 - Update the documentation as needed.
 
+### Feature Requests
+
+If you have any feature requests or suggestions, please feel free to open an issue on GitHub or contact me directly
+via [X](https://x.com/Gl0deanR).
+
 ## Todo
 
-- [ ] Coming soon...
+- [ ] **User Profile Management**
+    - [x] Add user profile view and edit functionality
+    - [x] Add password change feature
+    - [ ] Implement profile picture upload
+
+- [ ] **Role-Based Access Control**
+    - [ ] Define roles (admin, user)
+    - [ ] Implement role-based permissions
+    - [x] Create admin dashboard for user management
+
+- [ ] **Email Notifications**
+    - [ ] Integrate Flask-Mail
+    - [ ] Set up email templates for registration and password reset
+    - [ ] Implement background job for sending emails
+
+- [ ] **OAuth Integration**
+    - [ ] Set up OAuth with Google, Facebook, and GitHub
+    - [ ] Add login buttons and routes
+    - [ ] Handle OAuth user registration
+
+- [ ] **RESTful API Documentation**
+    - [ ] Document all API endpoints
+    - [ ] Provide examples and usage instructions
+
+- [ ] **Docker Compose Setup**
+    - [ ] Create a `docker-compose.yml` file
+    - [ ] Define services for the app and database
+    - [ ] Update documentation for Docker setup
+
+- [ ] **Admin Dashboard Enhancements**
+    - [ ] Add user analytics
+    - [ ] Integrate system health monitoring
+    - [ ] Implement activity logs
+
+---
 
 ## License
 
