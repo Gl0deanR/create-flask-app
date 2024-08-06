@@ -67,8 +67,8 @@ Make sure you have the following installed on your system:
 
 6. **Access the application:**
 
-   Open your browser and go to [http://localhost:5000/register](http://localhost:5000/register) to register a new user.
-   After registration, you can log in at [http://localhost:5000/login](http://localhost:5000/login). The home page is
+   Open your browser and go to [http://localhost:5000/auth/register](http://localhost:5000/auth/register) to register a new user.
+   After registration, you can log in at [http://localhost:5000/auth/login](http://localhost:5000/auth/login). The home page is
    protected and only accessible to logged-in users.
 
 ## Usage
