@@ -11,6 +11,7 @@ default, it uses [SQLite3](https://www.sqlite.org), but you can easily configure
 
 ## Features
 
+- #### **More features to come this month!**
 - User Registration
 - User Login
 - User Logout
@@ -163,7 +164,7 @@ This project is licensed under the MIT License - see the [LICENSE](license) file
 
 ## About Us
 
-This project is maintained by Raul, a solo developer and entrepreneur behind [GLOBINARY](https://globinary.io/en), a
+This project is maintained by me, Raul, founder of [GLOBINARY](https://globinary.io/en), a
 custom software solutions company. I specialize in creating web-based applications, mobile apps, and SaaS solutions.
 Visit our website to learn more about our services.
 
