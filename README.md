@@ -172,4 +172,4 @@ Connect with me on X: [@Gl0deanR](https://x.com/Gl0deanR)
 
 ---
 
-Thank you for using Create Flask App! If you encounter any issues or have suggestions, please open an issue on GitHub.
+Thank you for using Create Flask App! If you encounter any issues or have any suggestions, please open an issue on GitHub.
