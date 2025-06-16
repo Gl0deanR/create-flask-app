@@ -90,6 +90,15 @@ Whenever you make changes to your database models, apply the migrations with:
 flask db migrate -m "Description of changes"
 flask db upgrade
 ```
+### Running Tests
+
+To run the unit tests, install the dependencies and execute `pytest`:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
+
 
 ## Contributing
 
